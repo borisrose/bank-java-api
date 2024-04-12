@@ -1,0 +1,36 @@
+@startuml 
+
+header Relations entre les classes
+title Relations inter-classes
+
+class "User" as U #LightBlue {
+    - Integer id 
+    - Account account
+    - String firstname
+    - String lastname
+    - String role
+    - String username
+    - String password
+}
+class "Account" as A #LightCoral {
+    - Integer id
+    - Number balance
+    - LocalDate updatedAt
+    - CreditTransactions 
+    - DebitTransactions
+    - Integer owner_id
+
+}
+
+class "Transaction" as T  #LightGoldenRodYellow {
+    - Integer id
+    - LocalData madeAt
+    - Integer debitAccountId
+    - Integer creditAccountId
+}
+
+
+U "1" *-- "one" A: has
+A "1" *-- "many" T : contains
+
+@enduml

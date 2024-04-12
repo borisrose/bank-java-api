@@ -1,0 +1,8 @@
+POST http://localhost:8080/login
+Authorization: Basic user:password
+
+
+@token = eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoidXNlciIsImV4cCI6MTcxMzAzMjE3MSwiaWF0IjoxNzEyOTQ1NzcxfQ.HsZYah69u2sJqyyszu_svfkxUiTJcNpjsXV04ihIRDw
+###
+GET http://localhost:8080/api/users/all
+Authorization: Bearer {{token}}
